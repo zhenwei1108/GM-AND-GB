@@ -11,9 +11,9 @@ ContentInfo ::= SEQUENCE {
 ContentType ::= OBJECT IDENTIFIER
 --  data, signedData, envelopedData, signedAndEnvelopedData, digestedData, and encryptedData
 
-Data ::= OCTET STRING
+1. Data ::= OCTET STRING
 
-SignedData ::= SEQUENCE {
+2. SignedData ::= SEQUENCE {
      version Version,
      digestAlgorithms DigestAlgorithmIdentifiers, (SET)
      contentInfo ContentInfo,  (SEQUENCE)
@@ -48,30 +48,26 @@ EncryptedDigest ::= OCTET STRING
    
    
    
-EnvelopedData ::= SEQUENCE {
+3. EnvelopedData ::= SEQUENCE {
      version Version,
-     recipientInfos RecipientInfos,
+     recipientInfos RecipientInfos, --接收者信息，最少一个
      encryptedContentInfo EncryptedContentInfo }
 
    RecipientInfos ::= SET OF RecipientInfo
 
    EncryptedContentInfo ::= SEQUENCE {
      contentType ContentType,
-     contentEncryptionAlgorithm
-       ContentEncryptionAlgorithmIdentifier,
-     encryptedContent
-       [0] IMPLICIT EncryptedContent OPTIONAL }
+     contentEncryptionAlgorithm ContentEncryptionAlgorithmIdentifier,
+     encryptedContent  [0] IMPLICIT EncryptedContent OPTIONAL }
 
    EncryptedContent ::= OCTET STRING
    
    
 RecipientInfo ::= SEQUENCE {
      version Version,
-     issuerAndSerialNumber IssuerAndSerialNumber,
-     keyEncryptionAlgorithm
-
-       KeyEncryptionAlgorithmIdentifier,
-     encryptedKey EncryptedKey }
+     issuerAndSerialNumber IssuerAndSerialNumber, 
+     keyEncryptionAlgorithm KeyEncryptionAlgorithmIdentifier, --算法标识
+     encryptedKey EncryptedKey } --公钥加密数据的结果（加密的对称密钥）
 
    EncryptedKey ::= OCTET STRING
    
@@ -79,20 +75,17 @@ RecipientInfo ::= SEQUENCE {
 
 
 
- SignedAndEnvelopedData ::= SEQUENCE {
+ 4. SignedAndEnvelopedData ::= SEQUENCE {
      version Version,
      recipientInfos RecipientInfos,
      digestAlgorithms DigestAlgorithmIdentifiers,
      encryptedContentInfo EncryptedContentInfo,
-     certificates
-        [0] IMPLICIT ExtendedCertificatesAndCertificates
-          OPTIONAL,
-     crls
-       [1] IMPLICIT CertificateRevocationLists OPTIONAL,
+     certificates [0] IMPLICIT ExtendedCertificatesAndCertificates OPTIONAL,
+     crls [1] IMPLICIT CertificateRevocationLists OPTIONAL,
      signerInfos SignerInfos }
      
      
- DigestedData ::= SEQUENCE {
+ 5. DigestedData ::= SEQUENCE {
      version Version,
      digestAlgorithm DigestAlgorithmIdentifier,
      contentInfo ContentInfo,
@@ -102,7 +95,7 @@ RecipientInfo ::= SEQUENCE {
  
  
  
- EncryptedData ::= SEQUENCE {
+ 6. EncryptedData ::= SEQUENCE {
      version Version,
      encryptedContentInfo EncryptedContentInfo }
 
