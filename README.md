@@ -8,8 +8,6 @@
 
 ## RFC
 
-RFC -  pdf下载地址：  https://github.com/zhenwei1108/GM-AND-GB.git
-
 RFC - 查询地址: https://datatracker.ietf.org/
 
 中文翻译：http://www.rfc2cn.com/index.html
