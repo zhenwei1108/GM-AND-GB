@@ -4,16 +4,29 @@
 
 各种oid的定义在   GMT 0006-2012 密码应用标识规范 中
 
+
+
 ## RFC
+
+RFC -  pdf下载地址：  https://github.com/zhenwei1108/GM-AND-GB.git
+
+RFC - 查询地址: https://datatracker.ietf.org/
+
+中文翻译：http://www.rfc2cn.com/index.html
+
+常用的RFC编号, 用到再补充...
+
 
 | RFC  | 说明      | 备注                |
 | :--- | :-------- | :------------------ |
+|2104	|HMAC	|由 RFC 6151 补充|
 | 2256 | DN        | Ldap-证书主题项说明 |
 | 2315 | pkcs7     |                     |
-| 2437 | pkcs1     |                     |
 | 2328 | hashtabs  |                     |
+
+| 2437 | PKCS1、RSA操作   |                     |
+|2459|CRL|  |
 | 2560 | ocsp      |                     |
-| 2437 | RSA操作   |                     |
 | 2986 | pkcs10    |                     |
 | 3161 | 时间戳    |                     |
 | 3447 | pkcs1填充 |                     |
@@ -23,10 +36,13 @@
 | 4432 | RSA-Key   |                     |
 | 5208 | pkcs8     |                     |
 | 5280 | ASN1      |                     |
+|6238| TOTP| 一次性口令|
+|6962|CT log 1.0|  |
 | 7292 | pkcs12    |                     |
 | 7519 | jwt       |                     |
 | 8018 | pkcs5     |                     |
-|  |      |                     |
+|8032|ED DSA|  |
+| 9162 |   CT log 2.0   |                     |
 
 
 ## OID
