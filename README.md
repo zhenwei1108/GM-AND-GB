@@ -33,7 +33,8 @@ RFC - 查询地址: https://datatracker.ietf.org/
 | 3852,5652,8933 | CMS       | 基于PKCS7 frc2315   |
 | 4432 | RSA-Key   |                     |
 | 5208 | pkcs8     |                     |
-| 5280 | ASN1      |                     |
+| 5280 | CRL   |                     |
+| 6025 | ASN1 | |
 | 6238 | TOTP| 一次性口令 |
 | 6749           | OAuth 2.0   |  |
 | 6962           | CT log 1.0  |  |
